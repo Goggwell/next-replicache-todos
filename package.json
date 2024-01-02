@@ -14,11 +14,15 @@
     "next": "14.0.4"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@iconify-json/lucide": "^1.1.150",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@unocss/postcss": "^0.58.3",
     "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "eslint-config-next": "14.0.4",
+    "postcss": "^8.4.32",
+    "typescript": "^5",
+    "unocss": "^0.58.3"
   }
 }
