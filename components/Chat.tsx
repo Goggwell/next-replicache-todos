@@ -1,11 +1,28 @@
 'use client'
 
 import { useState } from "react"
+import { useSubscribe } from "replicache-react"
+import { getReplicache, type Message } from "@/lib/constructor"
 import MessageList from "./MessageList"
+
+const rep = getReplicache()
 
 const Chat = () => {
     const [username, setUsername] = useState<string>('');
     const [content, setContent] = useState<string>('');
+
+    const messages = useSubscribe(
+        rep,
+        async (tx) => {
+          const list = (await tx
+            .scan({ prefix: 'message/' })
+            .entries()
+            .toArray()) as [string, Message][]
+          list.sort(([, { order: a }], [, { order: b }]) => a - b)
+          return list
+        },
+        [],
+      )
 
     return (
         <div>
