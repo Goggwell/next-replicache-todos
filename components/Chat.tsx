@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useSubscribe } from "replicache-react"
 import { getReplicache, type Message } from "@/lib/constructor"
+import { listen } from "@/lib/actions"
 import MessageList from "./MessageList"
 
 const rep = getReplicache()
@@ -23,6 +24,10 @@ const Chat = () => {
         },
         [],
       )
+
+    useEffect(() => {
+        listen(rep)
+    }, []);
 
     return (
         <div>

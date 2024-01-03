@@ -8,7 +8,7 @@ export type Message = {
     order: number;
 }
 
-type MessageWithID = Message & {
+export type MessageWithID = Message & {
     id: string;
 }
 

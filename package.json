@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "next": "14.0.4",
+    "pusher-js": "^8.4.0-rc2",
     "react": "^18",
     "react-dom": "^18",
     "replicache": "^14.0.3",
