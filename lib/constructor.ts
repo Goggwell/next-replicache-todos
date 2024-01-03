@@ -20,6 +20,8 @@ const getReplicache = (): Replicache<{
       ? new Replicache({
         name: 'chat-user-id',
         licenseKey: process.env.REPLICACHE_LICENSE_KEY ?? 'l00000000000000000000000000000001',
+        pushURL: '/api/push',
+        pullURL: '/api/pull',
         mutators: {
           async createMessage(
             tx: WriteTransaction,
