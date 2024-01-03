@@ -27,7 +27,7 @@ async function initDB() {
                 id TEXT PRIMARY KEY NOT NULL,
                 sender VARCHAR(255) NOT NULL,
                 content TEXT NOT NULL,
-                order INTEGER NOT NULL,
+                ord INTEGER NOT NULL,
                 deleted BOOLEAN NOT NULL DEFAULT FALSE,
                 version INTEGER NOT NULL DEFAULT 0
             )
