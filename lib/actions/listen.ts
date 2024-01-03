@@ -1,6 +1,6 @@
 import Pusher from "pusher-js";
 import { Replicache, type WriteTransaction } from "replicache";
-import { MessageWithID } from "./constructor";
+import { MessageWithID } from "@/lib/constructor";
 
 export const listen = (rep: Replicache<{ createMessage: (tx: WriteTransaction, { id, from, content, order, }: MessageWithID) => Promise<void> }> | null) => {
     if (rep === null) {

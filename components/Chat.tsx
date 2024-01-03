@@ -3,7 +3,7 @@
 import { useState, useEffect, FormEvent } from "react"
 import { useSubscribe } from "replicache-react"
 import { getReplicache, type Message } from "@/lib/constructor"
-import { listen } from "@/lib/actions"
+import { listen } from "@/lib/actions/listen"
 import MessageList from "./MessageList"
 
 const rep = getReplicache()
