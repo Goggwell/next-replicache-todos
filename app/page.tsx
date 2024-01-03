@@ -1,3 +1,4 @@
+import Chat from '@/components/Chat'
 import { type Resource, Resources } from '@/components/Resources'
 
 const resources: Resource[] = [
@@ -51,6 +52,7 @@ export default function Home() {
       </div>
 
       <Resources resources={resources} />
+      <Chat />
     </main>
   )
 }
