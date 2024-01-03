@@ -1,7 +1,7 @@
 'use server'
 
 import { MessageWithID } from "@/lib/constructor"
-import { serverID, tx } from "@/utils/server/db"
+import { serverID } from "@/utils/server/db"
 import { ITask } from "pg-promise"
 import { MutationV1 } from "replicache"
 

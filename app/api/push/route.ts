@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import type { MutationV1, PushRequestV1 } from "replicache"
-import { serverID, tx } from "@/utils/server/db"
+import { tx } from "@/utils/server/db"
 import { processMutation, sendPoke } from "@/lib/actions/push"
 
 export async function POST(request: Request) {
@@ -23,7 +23,7 @@ export async function POST(request: Request) {
             }
             console.log(`Processed mutation ${mutation.id} in ${Date.now() - t1}ms`)
         }
-        
+
         await sendPoke()
 
         const response = NextResponse.json({})
