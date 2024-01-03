@@ -18,7 +18,7 @@ export async function getLastMutationID(t: ITask<{}>, clientID: string) {
     return parseInt(clientRow.last_mutation_id)
 }
 
-async function setLastMutationID(t: ITask<{}>, clientID: string, clientGroupID: string, mutationID: number, version: number) {
+export async function setLastMutationID(t: ITask<{}>, clientID: string, clientGroupID: string, mutationID: number, version: number) {
     await t.none(`
         INSERT INTO replicache_client (id, client_group_id, last_mutation_id, version)
         VALUES ($1, $2, $3, $4)
@@ -32,7 +32,7 @@ async function setLastMutationID(t: ITask<{}>, clientID: string, clientGroupID: 
     ])
 }
 
-async function createMessage(t: ITask<{}>, { id, from, content, order }: MessageWithID, version: number) {
+export async function createMessage(t: ITask<{}>, { id, from, content, order }: MessageWithID, version: number) {
     await t.none(`
         INSERT INTO message (id, sender, content, ord, deleted, version)
         VALUES ($1, $2, $3, $4, false, $5)
@@ -45,11 +45,11 @@ async function createMessage(t: ITask<{}>, { id, from, content, order }: Message
     ])
 }
 
-async function sendPoke() {
+export async function sendPoke() {
     // TODO: send poke to clients
 }
 
-async function processMutation(
+export async function processMutation(
     t: ITask<{}>,
     clientGroupID: string,
     mutation: MutationV1,
