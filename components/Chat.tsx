@@ -1,4 +1,5 @@
 'use client'
+import MessageList from "./MessageList"
 
 const Chat = () => {
     return (
@@ -8,6 +9,7 @@ const Chat = () => {
                 <input type="text" value="username" required placeholder="Your username" />
                 <input type="submit" />
             </form>
+            <MessageList />
         </div>
     )
 }
