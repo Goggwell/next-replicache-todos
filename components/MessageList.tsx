@@ -1,14 +1,14 @@
-const MessageList = (messages) => {
+const MessageList = ({ messages }) => {
     return (
         <>
-            {messages.map(([key, value]) => (
+            {messages?.map(([key, value]) => (
                 <div key={key}>
                     <b>
-                        Name
+                        {value.from}
                         :
                         {' '}
                     </b>
-                    Content
+                    {value.content}
                 </div>
             ))}
         </>
